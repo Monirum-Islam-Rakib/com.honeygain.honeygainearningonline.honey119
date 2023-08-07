@@ -77,8 +77,6 @@ public class honeygaincase119_DetailsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
-
         ShowFullAds();
 
 
@@ -216,16 +214,16 @@ public class honeygaincase119_DetailsActivity extends AppCompatActivity {
 
     }
 
-   public void showfbNativeBanner() {
+    public void showfbNativeBanner() {
 
         if (honeygaincase119_SplashActivity.nativeBannerAd.isAdLoaded()) {
-            
+
             View adView = NativeBannerAdView.render(this, honeygaincase119_SplashActivity.nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
             nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
             // Add the Native Banner Ad View to your ad container
             nativeBannerContainer.addView(adView);
         } else {
-            
+
             sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
             String Bannerid = sharedPreferences.getString("Bannerid", null);
             nativeBannerContainer = (FrameLayout) findViewById(R.id.fl_b);
@@ -244,7 +242,7 @@ public class honeygaincase119_DetailsActivity extends AppCompatActivity {
 
                 @Override
                 public void onAdLoaded(Ad ad) {
-                    
+
                     Log.e(TAG, "Native ad is loaded and ready to be displayed!");
                     View adView = NativeBannerAdView.render(getApplicationContext(), nativeBannerAd, NativeBannerAdView.Type.HEIGHT_100);
                     // Add the Native Banner Ad View to your ad container
